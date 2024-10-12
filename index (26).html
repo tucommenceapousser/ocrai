@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title and Description for SEO -->
+    <title>Upload Image for OCR</title>
+    <meta name="description" content="Téléchargez une image ou entrez une URL pour effectuer une reconnaissance de texte OCR en ligne.">
+
+    <!-- Keywords for SEO -->
+    <meta name="keywords" content="OCR, reconnaissance de texte, image upload, URL image, texte en ligne">
+
+    <!-- Author -->
+    <meta name="author" content="trhacknon">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <!-- Open Graph for Social Media Sharing -->
+    <meta property="og:title" content="Upload Image for OCR">
+    <meta property="og:description" content="Téléchargez une image ou entrez une URL pour effectuer une reconnaissance de texte OCR en ligne.">
+    <meta property="og:image" content="{{ url_for('static', filename='prev.png') }}">
+    <meta property="og:url" content="https://ocrai-trkn.replit.app">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card for Twitter Sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Upload Image for OCR">
+    <meta name="twitter:description" content="Téléchargez une image ou entrez une URL pour effectuer une reconnaissance de texte OCR en ligne.">
+    <meta name="twitter:image" content="{{ url_for('static', filename='prev.png') }}">
+
+    <!-- Robots -->
+    <meta name="robots" content="index,follow">
+
+    <!-- Viewport Settings for Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <h1>Upload une image ou entre une URL pour OCR</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <br>
+        <input type="text" name="image_url" placeholder="Ou entre l'URL de l'image">
+        <br>
+        <input type="submit" value="Soumettre">
+    </form>
+</body>
+</html>
